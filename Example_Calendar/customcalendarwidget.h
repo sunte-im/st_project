@@ -9,11 +9,9 @@ class CustomCalendarWidget : public QCalendarWidget
 private:
     bool m_controlPressFlag;
     bool m_mousePressFlag;
-    bool m_mouseMoveFlag;
     QDate m_startDate;
     QDate m_lastDate;
     QList<QDate> m_moveDateList;
-    QTimer* m_mouseReleaseTimer;
 
 public:
     explicit CustomCalendarWidget(QWidget *parent = nullptr);
