@@ -4,16 +4,30 @@
 #include <QTextCharFormat>
 #include <QMouseEvent>
 #include <QTimer>
+#include <QToolButton>
 
 CustomCalendarWidget::CustomCalendarWidget(QWidget *parent) : QCalendarWidget(parent)
 {
     m_mousePressFlag = false;
     m_controlPressFlag = false;
+    m_mouseMoveFlag = false;
+    m_mouseReleaseTimer = new QTimer(this);
+    connect(m_mouseReleaseTimer, SIGNAL(timeout()), this, SLOT(timeout_mouseReleaseTimer()));
 
     setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
-    setFocusPolicy(Qt::ClickFocus);
+    //setFocusPolicy(Qt::NoFocus);
     setGridVisible(true);
+
+    //this->blockSignals(true);
+
+    //QToolButton* btn = findChild<QToolButton*>("qt_calendar_prevmonth");
+    //btn->installEventFilter(this);
+
     QTableView* view = findChild<QTableView*>("qt_calendar_calendarview");
+
+    //view->blockSignals(true);
+    //view->viewport()->blockSignals(true);
+
     //view->installEventFilter(this);
     view->viewport()->installEventFilter(this);
     connect(this, SIGNAL(clicked(QDate)), this, SLOT(slot_clicked(QDate)));
@@ -95,10 +109,15 @@ void CustomCalendarWidget::keyReleaseEvent(QKeyEvent* event)
 
 bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
 {
+    //qDebug() << __FUNCTION__ << obj->objectName();
+
     if (e->type() == QEvent::MouseButtonPress)
     {
         if (m_controlPressFlag)
             return QObject::eventFilter(obj, e);
+
+        m_mouseMoveFlag = false;
+
 
         QTableView* view = findChild<QTableView*>("qt_calendar_calendarview");
         QMouseEvent *me = static_cast<QMouseEvent *>(e);
@@ -114,9 +133,12 @@ bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
 
         if (row < 2 && day > 15)
         {
-            date.setDate(yearShown(), monthShown(), 1);
-            QDate _date = date.addMonths(-1);
-            date.setDate(_date.year(), _date.month(), day);
+            //date.setDate(yearShown(), monthShown(), 1);
+            //QDate _date = date.addMonths(-1);
+            //date.setDate(_date.year(), _date.month(), day);
+            view->blockSignals(true);
+
+            return QObject::eventFilter(obj, e);
             //qDebug() << __FUNCTION__
             //         << "Press _date : " << _date
             //         << "Press date1 : " << date;
@@ -124,13 +146,17 @@ bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
 
         if (row > 4 && day < 15)
         {
-            date.setDate(yearShown(), monthShown(), 1);
-            QDate _date = date.addMonths(1);
-            date.setDate(_date.year(), _date.month(), day);
+            view->blockSignals(true);
+            return QObject::eventFilter(obj, e);
+            //date.setDate(yearShown(), monthShown(), 1);
+            //QDate _date = date.addMonths(1);
+            //date.setDate(_date.year(), _date.month(), day);
 
             //qDebug() << __FUNCTION__
             //         << "Press date1 : " << date;
         }
+
+        view->blockSignals(false);
 
         m_startDate = date;
 
@@ -141,16 +167,16 @@ bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
 
         m_mousePressFlag = true;
 
-
     }
     else if (e->type() == QEvent::MouseMove)
     {
         if (m_mousePressFlag)
         {
+            m_mouseMoveFlag = true;
+
             QTableView* view = findChild<QTableView*>("qt_calendar_calendarview");
             QMouseEvent *me = static_cast<QMouseEvent *>(e);
             QModelIndex index = view->indexAt(me->pos());
-
 
             int row = index.row();
             int day = index.data().toInt();
@@ -159,18 +185,17 @@ bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
 
             if (row < 2 && day > 15)
             {
-                date.setDate(yearShown(), monthShown(), 1);
-                QDate _date = date.addMonths(-1);
-                date.setDate(_date.year(), _date.month(), day);
+                view->blockSignals(true);
+                return QObject::eventFilter(obj, e);
             }
 
             if (row > 4 && day < 15)
             {
-                date.setDate(yearShown(), monthShown(), 1);
-                QDate _date = date.addMonths(1);
-                date.setDate(_date.year(), _date.month(), day);
+                view->blockSignals(true);
+                return QObject::eventFilter(obj, e);
             }
 
+            //view->blockSignals(false);
             //qDebug() << "CustomCalendarWidget::eventFilter MouseMove" << date;
 
             qint64 daysBetween = date.toJulianDay() -  m_startDate.toJulianDay();
@@ -211,7 +236,51 @@ bool CustomCalendarWidget::eventFilter(QObject* obj, QEvent* e)
         if (m_mousePressFlag)
         {
             m_mousePressFlag = false;
+            m_mouseMoveFlag = false;
+
+
+            QTableView* view = findChild<QTableView*>("qt_calendar_calendarview");
+            QMouseEvent *me = static_cast<QMouseEvent *>(e);
+            QModelIndex index = view->indexAt(me->pos());
+
+
+            int row = index.row();
+            int day = index.data().toInt();
+            QDate date;
+            date.setDate(yearShown(), monthShown(), day);
+
+
+            //return QObject::eventFilter(obj, e);
+            if (row < 2 && day > 15)
+            {
+                //view->blockSignals(true);
+//                date.setDate(yearShown(), monthShown(), 1);
+//                QDate _date = date.addMonths(-1);
+//                date.setDate(_date.year(), _date.month(), day);
+//                if (m_mouseMoveFlag)
+//                    clearSelectDate(date);
+
+                QTimer::singleShot(1, this, SLOT(timeout_mouseReleaseTimer()));
+                return QObject::eventFilter(obj, e);
+            }
+
+            if (row > 4 && day < 15)
+            {
+                //view->blockSignals(true);
+//                date.setDate(yearShown(), monthShown(), 1);
+//                QDate _date = date.addMonths(1);
+//                date.setDate(_date.year(), _date.month(), day);
+//                if (m_mouseMoveFlag)
+//                    clearSelectDate(date);
+
+                QTimer::singleShot(1, this, SLOT(timeout_mouseReleaseTimer()));
+                return QObject::eventFilter(obj, e);
+            }
+
+            view->blockSignals(false);
+
         }
+        QTimer::singleShot(1, this, SLOT(timeout_mouseReleaseTimer()));
     }
 
     return QObject::eventFilter(obj, e);
@@ -227,4 +296,17 @@ void CustomCalendarWidget::slot_clicked(QDate date)
         else
             selectDate(date);
     }
+}
+
+void CustomCalendarWidget::timeout_mouseReleaseTimer()
+{
+    qDebug() << __FUNCTION__;
+    //m_mouseReleaseTimer->stop();
+
+    QTableView* view = findChild<QTableView*>("qt_calendar_calendarview");
+    view->blockSignals(false);
+
+
+    view->setFocusPolicy(Qt::NoFocus);
+    view->setFocusPolicy(Qt::StrongFocus);
 }
