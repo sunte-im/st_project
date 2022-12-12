@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>test1.qml</file>
+        <file>loading_img/loading_00000.png</file>
+        <file>loading_img/loading_00001.png</file>
+        <file>loading_img/loading_00002.png</file>
+        <file>loading_img/loading_00003.png</file>
+        <file>loading_img/loading_00004.png</file>
+        <file>loading_img/loading_00005.png</file>
+        <file>loading_img/loading_00006.png</file>
+        <file>loading_img/loading_00007.png</file>
+        <file>loading_img/loading_00008.png</file>
+        <file>loading_img/loading_00009.png</file>
+        <file>loading_img/loading_00010.png</file>
+        <file>loading_img/loading_00011.png</file>
+        <file>loading_img/loading_00012.png</file>
+        <file>loading_img/loading_00013.png</file>
+        <file>loading_img/loading_00014.png</file>
+        <file>loading_img/loading_00015.png</file>
+        <file>loading_img/loading_00016.png</file>
+        <file>loading_img/loading_00017.png</file>
+        <file>loading_img/loading_00018.png</file>
+        <file>loading_img/loading_00019.png</file>
+        <file>loading_img/loading_00020.png</file>
+        <file>loading_img/loading_00021.png</file>
+        <file>loading_img/loading_00022.png</file>
+        <file>loading_img/loading_00023.png</file>
+        <file>loading_img/loading_00024.png</file>
+        <file>loading_img/loading_00025.png</file>
+        <file>loading_img/loading_00026.png</file>
+        <file>loading_img/loading_00027.png</file>
+        <file>loading_img/loading_00028.png</file>
+        <file>loading_img/loading_00029.png</file>
+    </qresource>
+</RCC>
