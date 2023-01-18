@@ -1,6 +1,7 @@
 ﻿#include "dialog.h"
 #include "ui_dialog.h"
 #include "timelinewidget.h"
+#include "timelinewidget2.h"
 #include <QDebug>
 #include <QTime>
 
@@ -11,9 +12,12 @@ Dialog::Dialog(QWidget *parent)
     ui->setupUi(this);
 
     m_timeLineWidget = new TimeLineWidget(this);
-    m_timeLineWidget->show();
+    m_timeLineWidget2 = new TimeLineWidget2(this);
 
     connect(m_timeLineWidget, SIGNAL(begin_end_signals(int,int)), this, SLOT(slot_begin_end_signals(int,int)));
+
+    ui->verticalLayout->addWidget(m_timeLineWidget);
+    ui->verticalLayout->addWidget(m_timeLineWidget2);
 }
 
 Dialog::~Dialog()
@@ -34,4 +38,19 @@ void Dialog::slot_begin_end_signals(int beginSec, int endSec)
     ui->timeEdit_begin->setTime(beginTime);
     ui->timeEdit_end->setTime(endTime);
 
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    int begin = ui->lineEdit_begin->text().toInt();
+    int end = ui->lineEdit_end->text().toInt();
+
+    m_timeLineWidget2->addTime(begin, end);
+
+    m_timeLineWidget2->updateUi();
+}
+
+void Dialog::on_pushButton_2_clicked()
+{
+    m_timeLineWidget2->clear();
 }

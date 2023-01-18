@@ -19,17 +19,20 @@ SOURCES += \
     main.cpp \
     dialog.cpp \
     timelinebeginendbodydialog.cpp \
-    timelinewidget.cpp
+    timelinewidget.cpp \
+    timelinewidget2.cpp
 
 HEADERS += \
     dialog.h \
     timelinebeginendbodydialog.h \
-    timelinewidget.h
+    timelinewidget.h \
+    timelinewidget2.h
 
 FORMS += \
     dialog.ui \
     timelinebeginendbodydialog.ui \
-    timelinewidget.ui
+    timelinewidget.ui \
+    timelinewidget2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
