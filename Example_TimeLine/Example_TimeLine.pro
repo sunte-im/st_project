@@ -31,8 +31,7 @@ HEADERS += \
 FORMS += \
     dialog.ui \
     timelinebeginendbodydialog.ui \
-    timelinewidget.ui \
-    timelinewidget2.ui
+    timelinewidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

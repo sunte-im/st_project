@@ -30,6 +30,9 @@ public:
     int indicatorToTime_sec();
     void setUseIndicator(bool f);
 
+    void setFixedLeft(bool f);
+    void setFixedRight(bool f);
+
 protected:
     void paintEvent(QPaintEvent *);
     void drawBody(QPainter& p);

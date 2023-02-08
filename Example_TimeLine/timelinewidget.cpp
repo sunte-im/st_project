@@ -83,6 +83,28 @@ void TimeLineWidget::setUseIndicator(bool f)
     m_useIndicator = f;
 }
 
+void TimeLineWidget::setFixedLeft(bool f)
+{
+    if (f)
+        ui->groupBox->setFixedWidth(0);
+    else
+    {
+        ui->groupBox->setMinimumWidth(0);
+        ui->groupBox->setMaximumWidth(QWIDGETSIZE_MAX);
+    }
+}
+
+void TimeLineWidget::setFixedRight(bool f)
+{
+    if (f)
+        ui->groupBox_3->setFixedWidth(0);
+    else
+    {
+        ui->groupBox_3->setMinimumWidth(0);
+        ui->groupBox_3->setMaximumWidth(QWIDGETSIZE_MAX);
+    }
+}
+
 void TimeLineWidget::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
