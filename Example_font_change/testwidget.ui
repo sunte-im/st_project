@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestWidget</class>
+ <widget class="QWidget" name="TestWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1122</width>
+    <height>769</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Test Widget #1</string>
+     </property>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>68</y>
+        <width>341</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{color:red; font-size:30px;}</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_31">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>abcdefghijklmnop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_32">
+         <property name="text">
+          <string>ABCDEFGHIJKLMNOP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_33">
+         <property name="text">
+          <string>a b c d e f g</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>A B C D E F G</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_35">
+         <property name="text">
+          <string>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌㅍㅋㅎ</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_36">
+         <property name="text">
+          <string>가나다라마바사아자차카타파하</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>537</y>
+        <width>321</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>a b c d e f g</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>435</y>
+        <width>321</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>abcdefghijklmnop</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>428</y>
+        <width>341</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{color:blue; font-size:25px;  font-family: Roboto;};;;;;;;;;;;;;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_37">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>abcdefghijklmnop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_38">
+         <property name="text">
+          <string>ABCDEFGHIJKLMNOP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_39">
+         <property name="text">
+          <string>a b c d e f g</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_40">
+         <property name="text">
+          <string>A B C D E F G</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_41">
+         <property name="text">
+          <string>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌㅍㅋㅎ</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_42">
+         <property name="text">
+          <string>가나다라마바사아자차카타파하</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>68</y>
+        <width>341</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>abcdefghijklmnop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>ABCDEFGHIJKLMNOP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>a b c d e f g</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>A B C D E F G</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_43">
+         <property name="text">
+          <string>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌㅍㅋㅎ</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_44">
+         <property name="text">
+          <string>가나다라마바사아자차카타파하</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_45">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>588</y>
+        <width>321</width>
+        <height>46</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A B C D E F G</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_46">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>691</y>
+        <width>321</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>가나다라마바사아자차카타파하</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>428</y>
+        <width>341</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{color:magenta;}</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QLabel" name="label_47">
+         <property name="styleSheet">
+          <string notr="true">QLabel{}</string>
+         </property>
+         <property name="text">
+          <string>abcdefghijklmnop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_48">
+         <property name="text">
+          <string>ABCDEFGHIJKLMNOP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_49">
+         <property name="text">
+          <string>a b c d e f g</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_50">
+         <property name="text">
+          <string>A B C D E F G</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_51">
+         <property name="text">
+          <string>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌㅍㅋㅎ</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_52">
+         <property name="text">
+          <string>가나다라마바사아자차카타파하</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_53">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>486</y>
+        <width>321</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ABCDEFGHIJKLMNOP</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_54">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>640</y>
+        <width>321</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌㅍㅋㅎ</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
