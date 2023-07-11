@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img_printing.png</file>
+        <file>3dprint_splash-0.png</file>
+        <file>3dprint_splash-1.png</file>
+        <file>3dprint_splash-2.png</file>
+        <file>3dprint_splash-3.png</file>
+        <file>3dprint_splash-4.png</file>
+        <file>3dprint_splash-5.png</file>
+        <file>3dprint_splash-6.png</file>
+        <file>3dprint_splash-7.png</file>
+        <file>3dprint_splash-8.png</file>
+        <file>3dprint_splash-9.png</file>
+        <file>3dprint_splash-10.png</file>
+        <file>3dprint_splash-11.png</file>
+        <file>3dprint_splash-12.png</file>
+        <file>3dprint_splash-13.png</file>
+        <file>3dprint_splash-14.png</file>
+        <file>3dprint_splash-15.png</file>
+        <file>3dprint_splash-16.png</file>
+        <file>3dprint_splash-17.png</file>
+        <file>3dprint_splash-18.png</file>
+        <file>3dprint_splash-19.png</file>
+        <file>3dprint_splash-20.png</file>
+        <file>3dprint_splash-21.png</file>
+        <file>3dprint_splash-22.png</file>
+        <file>3dprint_splash-23.png</file>
+        <file>3dprint_splash-24.png</file>
+        <file>3dprint_splash-25.png</file>
+        <file>3dprint_splash-26.png</file>
+        <file>3dprint_splash-27.png</file>
+        <file>3dprint_splash-28.png</file>
+        <file>3dprint_splash-29.png</file>
+        <file>3dprint_splash-30.png</file>
+        <file>3dprint_splash-31.png</file>
+        <file>3dprint_splash-32.png</file>
+        <file>3dprint_splash-33.png</file>
+        <file>3dprint_splash-34.png</file>
+        <file>3dprint_splash-35.png</file>
+        <file>3dprint_splash-36.png</file>
+        <file>3dprint_splash-37.png</file>
+        <file>3dprint_splash-38.png</file>
+        <file>3dprint_splash-39.png</file>
+    </qresource>
+</RCC>
