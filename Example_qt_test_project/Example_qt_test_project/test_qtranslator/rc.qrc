@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>language/ko_KR.qm</file>
+    </qresource>
+</RCC>
