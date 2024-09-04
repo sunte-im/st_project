@@ -26,21 +26,42 @@ void TouchScrollAreaWidget::moveUpDown(QEvent* e)
 {
     QMouseEvent *me = static_cast<QMouseEvent*>(e);
     QPoint curPos = me->globalPos();
-    int prevY = m_prevPos.y();
-    int currnetY = curPos.y();
-    int moveValue = abs(prevY) - abs(currnetY);
-    if (prevY > currnetY)
+
+    if (m_type == TYPE_LEFT_RIGHT_SCROLL)
     {
-        //qDebug() << __FUNCTION__ << " .. UP";
-        m_downCount = 0;
-        scrollUp(abs(moveValue));
+        int prevX = m_prevPos.x();
+        int currnetX = curPos.x();
+        int moveValue = abs(prevX) - abs(currnetX);
+        if (prevX > currnetX)
+        {
+            //qDebug() << __FUNCTION__ << " .. LEFT";
+            scrollLeft(abs(moveValue));
+        }
+        else if (prevX < currnetX)
+        {
+            //qDebug() << __FUNCTION__ << " .. RIGHT";
+            scrollRight(abs(moveValue));
+        }
     }
-    else if (prevY < currnetY)
+    else
     {
-        //qDebug() << __FUNCTION__ << " .. DOWN";
-        m_upCount = 0;
-        scrollDown(abs(moveValue));
+        int prevY = m_prevPos.y();
+        int currnetY = curPos.y();
+        int moveValue = abs(prevY) - abs(currnetY);
+        if (prevY > currnetY)
+        {
+            //qDebug() << __FUNCTION__ << " .. UP";
+            m_downCount = 0;
+            scrollUp(abs(moveValue));
+        }
+        else if (prevY < currnetY)
+        {
+            //qDebug() << __FUNCTION__ << " .. DOWN";
+            m_upCount = 0;
+            scrollDown(abs(moveValue));
+        }
     }
+
 
     m_prevPos = curPos;
 }
@@ -116,6 +137,26 @@ void TouchScrollAreaWidget::scrollDown(int moveValue)
 
         //qDebug() << __FUNCTION__ << value;
     }
+}
+
+void TouchScrollAreaWidget::scrollLeft(int moveValue)
+{
+    int value = horizontalScrollBar()->value();
+    int max = horizontalScrollBar()->maximum();
+    value = value + moveValue;
+    if (value > max) value = max;
+
+    horizontalScrollBar()->setValue(value);
+}
+
+void TouchScrollAreaWidget::scrollRight(int moveValue)
+{
+    int value = horizontalScrollBar()->value();
+    int min = horizontalScrollBar()->minimum();
+    value = value - moveValue;
+    if (value < min) value = min;
+
+    horizontalScrollBar()->setValue(value);
 }
 
 void TouchScrollAreaWidget::setType(TouchScrollAreaWidget::TYPE type)

@@ -27,6 +27,16 @@ Dialog::Dialog(QWidget *parent)
         ui->verticalLayout_5->addWidget(label);
     }
 
+    ui->scrollArea_5->setType(TouchScrollAreaWidget::TYPE_LEFT_RIGHT_SCROLL);
+    for (int i = 0; i < 12; ++i)
+    {
+        QLabel* label = new QLabel;
+        label->setText(QString::number(i+1));
+        label->setFixedWidth(50);
+        label->setStyleSheet("border:1px solid balck;");
+        ui->horizontalLayout->addWidget(label);
+    }
+
 }
 
 Dialog::~Dialog()

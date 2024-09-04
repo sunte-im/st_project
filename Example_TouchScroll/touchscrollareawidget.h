@@ -10,7 +10,8 @@ public:
     enum TYPE
     {
         TYPE_NORMAL_SCROLL,
-        TYPE_CENTER_SELECT
+        TYPE_CENTER_SELECT,
+        TYPE_LEFT_RIGHT_SCROLL,
     };
 
 private:
@@ -27,6 +28,9 @@ public:
     void moveUpDown(QEvent* e);
     void scrollUp(int moveValue);
     void scrollDown(int moveValue);
+
+    void scrollLeft(int moveValue);
+    void scrollRight(int moveValue);
 
     void setType(TYPE type);
     void setValue(int num);
